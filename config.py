@@ -6,4 +6,13 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY") 
 MODEL_NAME = os.getenv("MODEL_NAME", "meta-llama/llama-3.1-8b-instruct:free")
-LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO") 
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+
+# LLM параметры
+LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.7"))
+LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "500"))
+
+# Системный промпт
+SYSTEM_PROMPT = """Ты - ИИ-ассистент компании по оказанию консультационных услуг. 
+Твоя задача - помочь клиентам, отвечать на вопросы о компании и услугах в дружелюбном тоне.
+Отвечай кратко и по существу.""" 
